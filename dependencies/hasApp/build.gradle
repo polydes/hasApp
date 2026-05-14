@@ -1,8 +1,6 @@
 buildscript {
 	repositories {
-		maven {
-			url "http://repo1.maven.org/maven2/"
-		}
+		mavenCentral()
 	}
 	
 	dependencies {
@@ -10,20 +8,27 @@ buildscript {
 	}
 }
 
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 
 android {
 	compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
 	buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 	
+	namespace 'com.byrobin.hasApp'
+
 	sourceSets {
 		main {
 			manifest.srcFile 'AndroidManifest.xml'
 			java.srcDirs = ['src']
 		}
 	}
+
+    defaultConfig {
+        minSdkVersion Integer.parseInt(project.ANDROID_BUILD_MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
+    }
 }
 
 dependencies {
-	compile project(':deps:extension-api')
+	api project(':deps:extension-api')
 }

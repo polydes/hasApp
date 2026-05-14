@@ -1,0 +1,19 @@
+{
+  "group": "com.polydes.byrobin",
+  "id": "hasapp",
+  "name": "Has App",
+  "description": "Detect if an Android app is installed or not (by name or package).",
+  "tags": ["system"],
+  "type": "game",
+  "author": "Robin Schaafsma",
+  "website": "https://www.polydes.com/byrobingames/engine/hasapp",
+  "repository": "https://www.polydes.com/byrobingames",
+  "target": "stencyl-4.2.0",
+  "version": "0.8.0",
+
+  "icon": "icon.png",
+
+  "engine": {
+    "compatibility": "android"
+  }
+}
